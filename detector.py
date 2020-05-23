@@ -23,5 +23,7 @@ def region_of_interest(img,vertices):
     masked_image =cv2.bitwise_and(img,mask)
     return masked_image
 
-plt.imshow(image)
+cropped_image = region_of_interest(image,
+                                   np.array([region_of_interest_vertices],np.int32))
+plt.imshow(cropped_image)
 plt.show()
